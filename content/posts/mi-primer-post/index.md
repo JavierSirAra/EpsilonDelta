@@ -1,7 +1,7 @@
 +++
 title = "An intuitive exploration of the Ferrera–Gómez Generalized Takagi Class"
 date = 2025-08-23T23:39:22+02:00
-draft = true
+draft = false
 description = ""
 tags = []
 math = true
