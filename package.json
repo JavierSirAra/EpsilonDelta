@@ -1,0 +1,41 @@
+{
+  "name": "epsilon-delta-blog",
+  "version": "1.0.0",
+  "description": "Mathematics blog with Hugo and Hextra theme",
+  "main": "index.js",
+  "scripts": {
+    "dev": "hugo server --port 1313 --bind 0.0.0.0 --disableFastRender",
+    "build": "hugo --minify --gc",
+    "build:production": "hugo --minify --gc --environment production",
+    "clean": "hugo --gc",
+    "clean:all": "rm -rf public resources .hugo_build.lock",
+    "postinstall": "hugo mod get",
+    "tailwind:build": "tailwindcss -i ./assets/css/custom.css -o ./static/css/main.min.css --minify",
+    "tailwind:watch": "tailwindcss -i ./assets/css/custom.css -o ./static/css/main.min.css --watch",
+    "test:build": "npm run build && echo 'Build successful!'",
+    "deploy:preview": "npm run build:production && netlify deploy --dir=public --prod"
+  },
+  "keywords": [
+    "hugo",
+    "blog",
+    "mathematics",
+    "katex",
+    "tailwindcss",
+    "hextra",
+    "real-analysis"
+  ],
+  "author": "Epsilon Delta",
+  "license": "MIT",
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.10",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.3.6"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  }
+}
+

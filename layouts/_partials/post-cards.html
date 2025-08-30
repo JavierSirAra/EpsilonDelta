@@ -1,0 +1,13 @@
+<div class="hx:grid hx:grid-cols-1 md:hx:grid-cols-2 lg:hx:grid-cols-3 hx:gap-8">
+  {{ range (where .Site.RegularPages "Type" "posts") }}
+    <article class="hx:bg-white hx:p-6 hx:rounded-xl hx:shadow hover:hx:shadow-lg hx:transition hx:animate-slide-up">
+      <h3 class="hx:text-2xl hx:font-bold hx:mb-2">
+        <a href="{{ .RelPermalink }}" class="hx:text-primary-700 hx:hover:text-primary-800">
+          {{ .Title }}
+        </a>
+      </h3>
+      <p class="hx:text-secondary-700 hx:text-sm hx:mb-4">{{ .Date.Format "Jan 2, 2006" }}</p>
+      <p class="hx:text-text-primary">{{ .Summary | plainify | truncate 150 }}</p>
+    </article>
+  {{ end }}
+</div>

@@ -1,5 +1,0 @@
-/* Forzamos el tamaño del logo en la cabecera */
-[data-target="menu-bar"] span img {
-    height: 16px !important;
-    width: auto !important;
-}

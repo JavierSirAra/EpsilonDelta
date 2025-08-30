@@ -1,0 +1,99 @@
+# Configuration for Epsilon Delta Blog
+baseURL: "https://epsilon-delta.com/"
+title: "Epsilon Delta"
+theme: "hextra"
+
+enableRobotsTXT: true
+enableGitInfo: true
+enableEmoji: true
+
+outputs:
+  home: [html, llms]
+  page: [html]
+  section: [html, rss]
+
+defaultContentLanguage: en
+languages:
+  en:
+    languageName: English
+    weight: 1
+    title: "Epsilon Delta"
+  es:
+    languageName: Español
+    languageCode: es
+    weight: 2
+    title: "Epsilon Delta"
+
+module:
+  hugoVersion:
+    extended: true
+    min: "0.146.0"
+
+markup:
+  highlight:
+    noClasses: false
+    style: "github"
+  goldmark:
+    renderer:
+      unsafe: true
+
+enableInlineShortcodes: true
+
+# Taxonomies
+taxonomies:
+  tag: "tags"
+  category: "categories"
+
+# Parameters
+params:
+  description: "Blog about mathematics and real analysis"
+  
+  # --- CONFIGURACIÓN DEL LOGO Y FAVICON (Formato Correcto) ---
+  navbar:
+    logo:
+      path: "favicon.ico"   # Ruta a la imagen (desde /static)
+      width: 20          # Ancho de la imagen
+      height: 20         # Alto de la imagen
+    logoDark:
+      path: "favicon.ico"   # Ruta para el modo oscuro
+      width: 20
+      height: 20
+  
+  favicon: "favicon.ico" # El favicon sí acepta una cadena simple
+  # --- FIN DE LA CONFIGURACIÓN ---
+
+  # Author information
+  author:
+    name: "Epsilon Delta"
+    bio: "Math Student"
+    avatar: "logo.png"
+    github: "https://github.com/JavierSirAra"
+  
+  # Search configuration
+  search:
+    enable: true
+  
+  # Dark mode toggle
+  darkMode:
+    enable: true
+    default: "auto"
+
+# Menu configuration
+menu:
+  main:
+    - identifier: home
+      name: Home
+      url: /
+      weight: 10
+    - identifier: posts
+      name: Posts
+      url: /posts
+      weight: 20
+    - identifier: tags
+      name: Tags
+      url: /tags
+      weight: 30
+    - identifier: categories
+      name: Categories
+      url: /categories
+      weight: 40

@@ -1,0 +1,26 @@
+<!-- Custom KaTeX configuration for Epsilon Delta -->
+{{ if or (.Params.math) (.Content | findRE "\\$.*\\$") (.Content | findRE "\\\\[.*\\\\]") (.Content | findRE "\\\\\\(.*\\\\\\)") }}
+  <!-- Load KaTeX (no integrity, no crossorigin) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+  <!-- Auto-render configuration -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      if (typeof renderMathInElement === "function") {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "\\[", right: "\\]", display: true}
+          ],
+          throwOnError: false,
+          trust: true,
+          strict: false
+        });
+      }
+    });
+  </script>
+{{ end }}

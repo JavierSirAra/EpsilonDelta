@@ -1,0 +1,36 @@
+# English translations for Hextra theme
+search:
+  placeholder: "Search..."
+  no_results: "No results found"
+  results: "results found"
+
+pagination:
+  prev: "Previous"
+  next: "Next"
+  of: "of"
+
+reading_time:
+  one: "1 min read"
+  other: "{{ .Count }} min read"
+
+word_count:
+  one: "1 word"
+  other: "{{ .Count }} words"
+
+last_modified: "Last modified"
+published: "Published"
+updated: "Updated"
+tags: "Tags"
+categories: "Categories"
+series: "Series"
+related: "Related"
+share: "Share"
+copy: "Copy"
+copied: "Copied!"
+dark_mode: "Dark mode"
+light_mode: "Light mode"
+auto_mode: "Auto mode"
+menu: "Menu"
+close: "Close"
+search: "Search"
+back_to_top: "Back to top"
