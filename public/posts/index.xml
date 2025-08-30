@@ -17,10 +17,10 @@
     
     <item>
       <title>An intuitive exploration of the Ferrera–Gómez Generalized Takagi Class</title>
-      <link>http://localhost:1313/posts/2025-08-23-intuitive-exploration-ferrera-gomez/</link>
+      <link>http://localhost:1313/posts/2025-08-23-intuitive-exploration-ferrera-gomez/takagi/</link>
       <pubDate>Sat, 23 Aug 2025 23:39:22 +0200</pubDate>
       
-      <guid>http://localhost:1313/posts/2025-08-23-intuitive-exploration-ferrera-gomez/</guid>
+      <guid>http://localhost:1313/posts/2025-08-23-intuitive-exploration-ferrera-gomez/takagi/</guid>
       <description>
         
         
@@ -53,9 +53,11 @@ $$&lt;/p&gt;
 $$&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;(For $x \in [0,1], \phi(x)$ can be simply defined as $\min(x, 1-x)$)&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;In other words, $\phi(x)$ is the familiar &lt;em&gt;triangle wave&lt;/em&gt;, with peaks at half-integers $k + \tfrac{1}{2}$ and valleys at integers $k \in \mathbb{Z}$. Thus, at $n=0$, our first term takes the following shape:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;phiofx.png&#34; alt=&#34;phiofx.png&#34;  loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;
+    &lt;img src=&#34;../phiofx.png&#34; alt=&#34;phiofx.png&#34;  loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;At $n=1$, we add $\frac{\phi(2x)}{2}$, which looks like a half-size version of our previous function:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;phiof2xover2.png&#34; alt=&#34;phiof2xover2.png&#34;  loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;
+    &lt;img src=&#34;../phiof2xover2.png&#34; alt=&#34;phiof2xover2.png&#34;  loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;As $n$ increases, each new term contributes a smaller triangular wave, successively halved in amplitude and doubled in frequency. The process can be viewed as layering finer and finer triangular ripples on top of the initial wave.&lt;/p&gt;
 &lt;p&gt;The crucial point is that the early terms determine the &lt;em&gt;broad shape&lt;/em&gt; of the curve, while later terms only add detail.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;(Observe how every new &amp;ldquo;vertex&amp;rdquo; created in each iteration will remain fixed thereafter, as the maxima of $\phi(2^n x)$  coincide with the zeros of $\phi(2^m x)$, for all  $m&amp;gt;n$)&lt;/em&gt;.&lt;/p&gt;
@@ -112,7 +114,8 @@ $$&lt;/p&gt;
 T(x)=T(x_0)+2^{-n},T\big(2^n(x-x_0)\big),
 $$&lt;/p&gt;
 &lt;p&gt;where $x_0=\tfrac{k}{2^n}$ is the left endpoint of the interval.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;ezgif-6dd4ff4bf27fb7.gif&#34; alt=&#34;ezgif-6dd4ff4bf27fb7.gif&#34;  loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;
+    &lt;img src=&#34;../ezgif-6dd4ff4bf27fb7.gif&#34; alt=&#34;ezgif-6dd4ff4bf27fb7.gif&#34;  loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
 &lt;h2&gt;2. The Takagi–Landsberg family: The first generalization&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;2-the-takagilandsberg-family-the-first-generalization&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#2-the-takagilandsberg-family-the-first-generalization&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Once we have understood the classical Takagi function, the next natural step is not simply to ask for &lt;em&gt;other&lt;/em&gt; continuous nowhere differentiable functions. After all, the famous Weierstrass function already fits that bill, though it arises from a completely different harmonic construction.&lt;/p&gt;
 &lt;p&gt;Instead, the question is more specific: &lt;strong&gt;can we generalize the very recipe by which Takagi built his function?&lt;/strong&gt; In other words, if we keep the same triangular-wave framework but relax some choices, what new families of functions emerge?&lt;/p&gt;

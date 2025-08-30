@@ -1,0 +1,45 @@
+{{ define "main" }}
+
+<!-- Hero / Header -->
+<section class="hero py-20 text-center bg-primary-700 text-white">
+  <div class="container mx-auto px-4">
+    <h1 class="text-5xl font-bold mb-4 animate-fade-in">Epsilon Delta</h1>
+    <p class="text-xl mb-6 animate-fade-in delay-100">
+      A math blog written by students, for students. Dive into intuitive explanations, challenging problems, and clever insights that make math both approachable and exciting.
+    </p>
+    <a href="#posts" class="inline-block px-6 py-3 bg-accent-500 text-white font-semibold rounded-lg hover:bg-accent-600 transition animate-slide-up">
+      Explore Posts
+    </a>
+  </div>
+</section>
+
+<!-- Latest Posts -->
+<section id="posts" class="posts py-16 bg-secondary-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl font-semibold mb-12 text-center text-text-primary animate-fade-in">
+      Latest Posts
+    </h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {{ range (where .Site.RegularPages "Type" "posts") }}
+      <article class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition duration-300 animate-slide-up">
+        <h3 class="text-2xl font-bold mb-2">
+          <a href="{{ .RelPermalink }}" class="text-primary-700 hover:text-primary-800">
+            {{ .Title }}
+          </a>
+        </h3>
+        <p class="text-secondary-700 text-sm mb-4">{{ .Date.Format "Jan 2, 2006" }}</p>
+        <p class="text-text-primary">{{ .Summary | plainify | truncate 150 }}</p>
+      </article>
+      {{ end }}
+    </div>
+
+    <!-- Optional: View All Posts Button -->
+    <div class="text-center mt-12">
+      <a href="/posts" class="px-6 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition">
+        View All Posts
+      </a>
+    </div>
+  </div>
+</section>
+
+{{ end }}

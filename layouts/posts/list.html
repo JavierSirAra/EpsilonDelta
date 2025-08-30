@@ -1,0 +1,51 @@
+{{ define "main" }}
+<div class='hx:mx-auto hx:flex hextra-max-page-width'>
+  {{ partial "sidebar.html" (dict "context" .) }}
+  {{ partial "toc.html" (dict "context" .) }}
+  <article class="hx:w-full hx:break-words hx:flex hx:min-h-[calc(100vh-var(--navbar-height))] hx:min-w-0 hx:justify-center hx:pb-8 hx:pr-[calc(env(safe-area-inset-right)-1.5rem)]">
+    <main class="hx:w-full hx:min-w-0 hx:max-w-6xl hx:px-6 hx:pt-4 hx:md:px-12">
+      
+      {{/* Título de la página (Ej: "Posts") */}}
+      <header class="hx:mb-8">
+        <h1 class="hx:text-4xl hx:font-bold hx:tracking-tight hx:text-slate-900 hx:dark:text-slate-100">
+          {{ .Title }}
+        </h1>
+      </header>
+
+      {{/* 
+        EL CAMBIO CLAVE:
+        Usamos el mismo contenedor "hextra-cards" y la misma estructura de tarjeta
+        que en la página de inicio para crear una parrilla de 3 columnas.
+      */}}
+      <div class="hextra-cards hx:mt-4 hx:gap-4 hx:grid not-prose" style="--hextra-cards-grid-cols:3">
+        
+        {{/* Recorremos TODAS las páginas de esta sección, con paginación */}}
+        {{ range .Paginator.Pages }}
+          {{ $post := . }}
+          <a class="hextra-card hx:group hx:flex hx:flex-col hx:justify-start hx:overflow-hidden hx:rounded-lg hx:border hx:border-gray-200 hx:text-current hx:no-underline hx:bg-gray-100 dark:hx-bg-neutral-800 hx:shadow dark:hx-border-neutral-700 hover:hx-shadow-lg" href="{{ $post.RelPermalink }}">
+            {{ with $post.Params.featured_image }}
+              <img alt="Featured image for {{ $post.Title }}" 
+                   class="hextra-card-image" 
+                   loading="lazy" 
+                   decoding="async" 
+                   src="{{ . | relURL }}">
+            {{ end }}
+            <div class="hx:p-4">
+              <span class="hx:font-semibold hx:text-gray-700 dark:hx-text-neutral-200">{{ $post.Title }}</span>
+              <div class="hx:line-clamp-3 hx:mt-2 hx:text-sm hx:font-normal hx:text-gray-500 dark:hx-text-gray-400">
+                {{ with $post.Params.description }}{{ . }}{{ else }}{{ $post.Summary | plainify | truncate 150 }}{{ end }}
+              </div>
+            </div>
+          </a>
+        {{ end }}
+      </div>
+
+      {{/* Paginación (si tienes muchos posts) */}}
+      <div class="hx:mt-12">
+        {{ template "_internal/pagination.html" . }}
+      </div>
+
+    </main>
+  </article>
+</div>
+{{ end }}
