@@ -168,10 +168,6 @@ This parameter \(H\) is known as the **Hurst parameter**.
 - At $H=1$, we recover the **classical Takagi function**.  
 - For $H>1$, the coefficients decay more rapidly, meaning that high-frequency oscillations are heavily damped. The resulting function is smoother, and in fact for sufficiently large $H$ it is not only continuous but differentiable (and eventually analytic).  
 
-Thus the Hurst parameter effectively interpolates between rough, fractal-like graphs ($H < 1$) and smoother, more classical curves ($H > 1$).
-
-<!--- GIF --->
-
 Observe that the weight factor can be written as
 
 $$
@@ -199,7 +195,7 @@ Different values of $w$ correspond to different “levels of roughness” or smo
 - For larger $w$ (close to 1), the higher-order oscillations persist with significant weight, producing highly irregular, jagged graphs.  
 - Remarkably, at special values of $w$, the function admits **closed-form expressions**. For example, when $w = \tfrac{1}{4}$, the infinite sum collapses into a simple quadratic, giving a **parabola**:
 
-<!-- AÑADIR GIF / INTERACTIVIDAD!!!!!!!!!!!!!!!!!!!!!!!--> 
+![w-parameter.gif](w-parameter.gif)
 
 *(Fun fact: This construction of the parabola, by midpoint subdivision, was described by Archimedes.)*
 
@@ -235,7 +231,7 @@ Some important points:
 
 Let’s visualize three simple weight sequences that meet our convergence criterion. Notice how, despite their different appearance, they all share continuity, fractal structure, and (depending on parameters) non-differentiability:  
 
-<!--INTERACTIVITY !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+![weight-comparison.png](weight-comparison.png)
 
 
 ### 3.1. Differentiability Properties of the Takagi Class
@@ -313,7 +309,11 @@ Now, it's natural to ask the following question:
 
 *Could we still get a continuous, nowhere differentiable function? Could we vary the shape and spacing of the bumps, yet retain the same multiscale structure that makes Takagi functions so fractal?*
 
-This is precisely the idea behind the **Ferrera–Gómez generalisation**[3]. They realised that the key ingredient in the classical construction is **not the dyadic grid itself**, but rather the fact that:
+![grid-change.gif](grid-change.gif)
+
+*In this gif, we're switching between a Dyadic subset of $[0,1]$: $D_4^{\mathrm{dyadic}}$ and a somewhat arbitrary subset of $[0,1]$. Notice how this inflences our function $g_4(x)=\operatorname{dist}(x,D_4)$.*
+
+This is precisely the idea behind the **Ferrera–Gómez generalisation** [3]. They realised that the key ingredient in the classical construction is **not the dyadic grid itself**, but rather the fact that:
 
 1. Each level $n$ corresponds to a **finite set of points $D_n$ in $[0,1]$**.  
 2. The points in $D_n$ are sufficiently dense, and the spacing between consecutive points is controlled (not too small, not too large, relative to a scale $\alpha_n$).  
@@ -537,6 +537,8 @@ We started with a strange combinatorial recipe—counting digit disagreements—
 *   **Modern geometric view**: $T(x)$ is a superposition of triangular waves.
 
 They are two sides of the same coin: one discrete and combinatorial, the other continuous and geometric. This duality is precisely what makes the Takagi function such a beautiful and surprising object.
+
+
 ## 6. Where the Wild Functions Are: Surprising Applications
 
 After tracing the Takagi function's journey from a curious combinatorial formula to a vast geometric generalization, a fair question arises: Is this just a beautiful, abstract playground for mathematicians? Or does this "monster" ever escape the zoo and appear in other fields?
