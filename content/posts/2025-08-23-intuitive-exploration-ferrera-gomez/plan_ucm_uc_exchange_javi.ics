@@ -1,0 +1,109 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//UCM-UC Exchange Planner//Javi//
+BEGIN:VEVENT
+UID:ICMAT: Groups in Madrid (assistance & networking)-2025-09-25@javi-ucm-uc
+SUMMARY:ICMAT: Groups in Madrid (assistance & networking)
+DTSTART;VALUE=DATE:20250925
+DTEND;VALUE=DATE:20250927
+DESCRIPTION:Bring notebook. Affiliation: Universidad Complutense de Madrid (Undergraduate\, Math). Ask organizers for attendance certificate.
+END:VEVENT
+BEGIN:VEVENT
+UID:UNED (Extensión): Introducción a LaTeX — curso-2025-09-15@javi-ucm-uc
+SUMMARY:UNED (Extensión): Introducción a LaTeX — curso
+DTSTART;VALUE=DATE:20250915
+DTEND;VALUE=DATE:20251001
+DESCRIPTION:Objetivo: completar y descargar certificado (1 ECTS).
+END:VEVENT
+BEGIN:VEVENT
+UID:UNED (Extensión): Cero de Estadística — curso-2025-10-08@javi-ucm-uc
+SUMMARY:UNED (Extensión): Cero de Estadística — curso
+DTSTART;VALUE=DATE:20251008
+DTEND;VALUE=DATE:20251023
+DESCRIPTION:Objetivo: completar y descargar certificado (0.5 ECTS).
+END:VEVENT
+BEGIN:VEVENT
+UID:UC3M (Fundación): Python para Data Science — sesión-20251013T1600@javi-ucm-uc
+SUMMARY:UC3M (Fundación): Python para Data Science — sesión
+DTSTART:20251013T160000
+DTEND:20251013T180000
+DESCRIPTION:Curso corto con certificado acreditativo. Finaliza 22/10.
+END:VEVENT
+BEGIN:VEVENT
+UID:UC3M (Fundación): Python para Data Science — sesión-20251015T1600@javi-ucm-uc
+SUMMARY:UC3M (Fundación): Python para Data Science — sesión
+DTSTART:20251015T160000
+DTEND:20251015T180000
+DESCRIPTION:Curso corto con certificado acreditativo. Finaliza 22/10.
+END:VEVENT
+BEGIN:VEVENT
+UID:UC3M (Fundación): Python para Data Science — sesión-20251020T1600@javi-ucm-uc
+SUMMARY:UC3M (Fundación): Python para Data Science — sesión
+DTSTART:20251020T160000
+DTEND:20251020T180000
+DESCRIPTION:Curso corto con certificado acreditativo. Finaliza 22/10.
+END:VEVENT
+BEGIN:VEVENT
+UID:UC3M (Fundación): Python para Data Science — sesión-20251022T1600@javi-ucm-uc
+SUMMARY:UC3M (Fundación): Python para Data Science — sesión
+DTSTART:20251022T160000
+DTEND:20251022T180000
+DESCRIPTION:Curso corto con certificado acreditativo. Finaliza 22/10.
+END:VEVENT
+BEGIN:VEVENT
+UID:UCM Microcredencial: Fundamentos de Inteligencia Artificial (online)-2025-10-23@javi-ucm-uc
+SUMMARY:UCM Microcredencial: Fundamentos de Inteligencia Artificial (online)
+DTSTART;VALUE=DATE:20251023
+DTEND;VALUE=DATE:20251205
+DESCRIPTION:Microcredencial UCM. Objetivo: certificado oficial antes del 15/12.
+END:VEVENT
+BEGIN:VEVENT
+UID:Semana de la Ciencia Madrid — Colaborador UCM/IMI-2025-11-03@javi-ucm-uc
+SUMMARY:Semana de la Ciencia Madrid — Colaborador UCM/IMI
+DTSTART;VALUE=DATE:20251103
+DTEND;VALUE=DATE:20251117
+DESCRIPTION:Asegurar PDI como coordinador y certificado UCC+i. Adjuntar fotos y asistentes.
+END:VEVENT
+BEGIN:VEVENT
+UID:Reserva IELTS — objetivo 7.5–8-2025-09-10@javi-ucm-uc
+SUMMARY:Reserva IELTS — objetivo 7.5–8
+DTSTART;VALUE=DATE:20250910
+DTEND;VALUE=DATE:20250911
+DESCRIPTION:Reservar BC/IDP en Madrid. Speaking a convenir. Prep listening/reading diarios\; writing 2/semana\; speaking 3/semana.
+END:VEVENT
+BEGIN:VEVENT
+UID:IELTS — ventana objetivo (1er intento)-2025-11-09@javi-ucm-uc
+SUMMARY:IELTS — ventana objetivo (1er intento)
+DTSTART;VALUE=DATE:20251109
+DTEND;VALUE=DATE:20251110
+DESCRIPTION:Dejar margen para 2º intento en diciembre si fuera necesario.
+END:VEVENT
+BEGIN:VEVENT
+UID:Renovación de pasaporte — cita y documentación-2025-09-02@javi-ucm-uc
+SUMMARY:Renovación de pasaporte — cita y documentación
+DTSTART;VALUE=DATE:20250902
+DTEND;VALUE=DATE:20250903
+DESCRIPTION:Cita previa online. Llevar DNI\, fotos\, tasas.
+END:VEVENT
+BEGIN:VEVENT
+UID:Prácticas curriculares — consulta Facultad Matemáticas UCM-2025-09-03@javi-ucm-uc
+SUMMARY:Prácticas curriculares — consulta Facultad Matemáticas UCM
+DTSTART;VALUE=DATE:20250903
+DTEND;VALUE=DATE:20250904
+DESCRIPTION:Escribir a practicasmat@ucm.es para opciones 1º cuatrimestre (oct–dic).
+END:VEVENT
+BEGIN:VEVENT
+UID:Entrega solicitud UCM–UC (MoveOn) — fecha de referencia-2025-12-15@javi-ucm-uc
+SUMMARY:Entrega solicitud UCM–UC (MoveOn) — fecha de referencia
+DTSTART;VALUE=DATE:20251215
+DTEND;VALUE=DATE:20251216
+DESCRIPTION:Subir CV acreditado\, carta de motivación\, recomendación\, idioma (o cita). Verifica fechas exactas de la nueva convocatoria.
+END:VEVENT
+BEGIN:VEVENT
+UID:Subsanación idioma — fecha de referencia-2026-01-07@javi-ucm-uc
+SUMMARY:Subsanación idioma — fecha de referencia
+DTSTART;VALUE=DATE:20260107
+DTEND;VALUE=DATE:20260108
+DESCRIPTION:Fecha típica para acreditar idioma (ver convocatoria vigente).
+END:VEVENT
+END:VCALENDAR
