@@ -17,22 +17,22 @@
     
     <item>
       <title>An intuitive exploration of the Ferrera–Gómez Generalized Takagi Class</title>
-      <link>http://localhost:1313/posts/2025-08-23-intuitive-exploration-ferrera-gomez/takagi/</link>
+      <link>http://localhost:1313/posts/2025-08-23-intuitive-exploration-ferrera-gomez/</link>
       <pubDate>Sat, 23 Aug 2025 23:39:22 +0200</pubDate>
       
-      <guid>http://localhost:1313/posts/2025-08-23-intuitive-exploration-ferrera-gomez/takagi/</guid>
+      <guid>http://localhost:1313/posts/2025-08-23-intuitive-exploration-ferrera-gomez/</guid>
       <description>
         
         
         &lt;!-- Contenido --&gt;
 &lt;h2&gt;Prologue&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;prologue&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#prologue&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The Takagi function, introduced in 1903, has long stood as a striking example of how simple definitions can conceal remarkably intricate behavior. Constructed from the triangular wave and famously continuous yet nowhere differentiable, it serves as a cornerstone in the study of pathological functions, illustrating the subtle boundaries of continuity and differentiability in analysis.&lt;/p&gt;
-&lt;p&gt;Yet mathematics often progresses by asking: &lt;em&gt;what if we change the rules? What if the rigid coefficients of the classical Takagi function are replaced by a flexible sequence of weights, or if the supporting structure is broadened to include sequences of subsets that densely populate the interval $[0,1]$?&lt;/em&gt; Such variations transform a single function into an entire class of functions whose geometry can range from extremely irregular to unexpectedly regular, depending on the chosen parameters.&lt;/p&gt;
-&lt;p&gt;This broader landscape is precisely what the Ferrera–Gómez Generalized Takagi Class explores. Originating from the Takagi function, and extended by Ferrera and Gómez through the use of increasing sequences of finite subsets of $[0,1]$, this generalization extends the most fundamental properties of the Takagi curve to a wide set of functions.&lt;/p&gt;
+&lt;p&gt;Yet mathematics often progresses by asking: &lt;em&gt;what if we relax the rules? What if the rigid coefficients of the classical Takagi function are replaced by a flexible sequence of weights, or if the supporting structure is broadened to include sequences of subsets that densely populate the interval $[0,1]$?&lt;/em&gt; Such variations transform a single function into an entire class of functions whose geometry can range from extremely irregular to unexpectedly regular, depending on the chosen parameters.&lt;/p&gt;
+&lt;p&gt;This broader landscape is precisely what the Ferrera–Gómez Generalized Takagi Class explores. Originating from the Takagi class, and extended by Ferrera and Gómez through the use of increasing sequences of finite subsets of $[0,1]$, this generalization extends the most fundamental properties of the Takagi curve to a wide set of functions.&lt;/p&gt;
 &lt;p&gt;The purpose of this post is to offer a step-by-step and intuitive approach to this generalization. Rather than presenting the theory in its most technical form, we will:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Revisit&lt;/strong&gt; the classical Takagi function to identify the key ideas that drive its construction.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Introduce&lt;/strong&gt; the classical Takagi function to identify the key ideas that drive its construction.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Extend&lt;/strong&gt; the framework gradually, introducing nonnegative sequences of weights and highlighting their role in shaping the function’s structure.&lt;/p&gt;
@@ -41,7 +41,7 @@
 &lt;p&gt;&lt;strong&gt;Explore&lt;/strong&gt; how the use of dense subsets of $[0,1]$ leads naturally to the Ferrera–Gómez class.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Our aim is to make the path from the classical function to its modern generalization clear and approachable, while still respecting the depth of the mathematics involved. By the end, the Ferrera–Gómez framework should appear not as an arbitrary extension, but as a natural and elegant enlargement of one of the most iconic objects in real analysis.&lt;/p&gt;
+&lt;p&gt;My aim is to use the Takagi function as an excuse to dive into the mindset that drives mathematical progress: &lt;strong&gt;generalisation&lt;/strong&gt;. To do this, we&amp;rsquo;ll walk the path from the classical function to its modern generalization in a clear and approachable way, while still respecting the depth of the mathematics involved. By the end, the Ferrera–Gómez framework should appear not as an arbitrary extension, but as a natural and elegant generalisation of one of the most iconic objects in real analysis.&lt;/p&gt;
 &lt;h2&gt;1. Introduction: What is the Takagi function?&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;1-introduction-what-is-the-takagi-function&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#1-introduction-what-is-the-takagi-function&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The simplest way to define the Takagi function is as follows:&lt;/p&gt;
 &lt;p&gt;$$
@@ -53,17 +53,15 @@ $$&lt;/p&gt;
 $$&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;(For $x \in [0,1], \phi(x)$ can be simply defined as $\min(x, 1-x)$)&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;In other words, $\phi(x)$ is the familiar &lt;em&gt;triangle wave&lt;/em&gt;, with peaks at half-integers $k + \tfrac{1}{2}$ and valleys at integers $k \in \mathbb{Z}$. Thus, at $n=0$, our first term takes the following shape:&lt;/p&gt;
-&lt;p&gt;
-    &lt;img src=&#34;../phiofx.png&#34; alt=&#34;phiofx.png&#34;  loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;phiofx.png&#34; alt=&#34;phiofx.png&#34;  loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;At $n=1$, we add $\frac{\phi(2x)}{2}$, which looks like a half-size version of our previous function:&lt;/p&gt;
-&lt;p&gt;
-    &lt;img src=&#34;../phiof2xover2.png&#34; alt=&#34;phiof2xover2.png&#34;  loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;phiof2xover2.png&#34; alt=&#34;phiof2xover2.png&#34;  loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;As $n$ increases, each new term contributes a smaller triangular wave, successively halved in amplitude and doubled in frequency. The process can be viewed as layering finer and finer triangular ripples on top of the initial wave.&lt;/p&gt;
 &lt;p&gt;The crucial point is that the early terms determine the &lt;em&gt;broad shape&lt;/em&gt; of the curve, while later terms only add detail.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;(Observe how every new &amp;ldquo;vertex&amp;rdquo; created in each iteration will remain fixed thereafter, as the maxima of $\phi(2^n x)$  coincide with the zeros of $\phi(2^m x)$, for all  $m&amp;gt;n$)&lt;/em&gt;.&lt;/p&gt;
-&lt;!--Añadir aquí algo--&gt;
+&lt;p&gt;&lt;img src=&#34;takagi-construction.gif&#34; alt=&#34;takagi-construction.gif&#34;  loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
 &lt;h3&gt;1.1. Properties of the Takagi function:&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;11-properties-of-the-takagi-function&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#11-properties-of-the-takagi-function&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;What makes the Takagi function especially interesting is its resemblance to the Weierstrass function: &lt;strong&gt;it is continuous everywhere but not differentiable at any point.&lt;/strong&gt;&lt;/p&gt;
+    &lt;a href=&#34;#11-properties-of-the-takagi-function&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;What makes the Takagi function especially interesting is its pathological nature (Similar to the more famous Weierstrass function): &lt;strong&gt;it is continuous everywhere but not differentiable at any point.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;The continuity of the Takagi function is not hard to prove: Since $ \phi(x) \in [0, \frac{1}{2}]$ for all $x \in \mathbb{R}$,&lt;/p&gt;
 &lt;p&gt;$$
 \left|\frac{1}{2^n} \phi(2^n x)\right| \leq \frac{1}{2^{n+1}}.
@@ -113,13 +111,13 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 T(x)=T(x_0)+2^{-n},T\big(2^n(x-x_0)\big),
 $$&lt;/p&gt;
-&lt;p&gt;where $x_0=\tfrac{k}{2^n}$ is the left endpoint of the interval.&lt;/p&gt;
-&lt;p&gt;
-    &lt;img src=&#34;../ezgif-6dd4ff4bf27fb7.gif&#34; alt=&#34;ezgif-6dd4ff4bf27fb7.gif&#34;  loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;where $x_0=\tfrac{k}{2^n}$ is the left endpoint of the interval [1, 9].&lt;/p&gt;
+&lt;p&gt;Essentially, one can find infinitely many smaller copies of the Takagi curve, nested at every dyadic scale:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;ezgif-6dd4ff4bf27fb7.gif&#34; alt=&#34;ezgif-6dd4ff4bf27fb7.gif&#34;  loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
 &lt;h2&gt;2. The Takagi–Landsberg family: The first generalization&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;2-the-takagilandsberg-family-the-first-generalization&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#2-the-takagilandsberg-family-the-first-generalization&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Once we have understood the classical Takagi function, the next natural step is not simply to ask for &lt;em&gt;other&lt;/em&gt; continuous nowhere differentiable functions. After all, the famous Weierstrass function already fits that bill, though it arises from a completely different harmonic construction.&lt;/p&gt;
-&lt;p&gt;Instead, the question is more specific: &lt;strong&gt;can we generalize the very recipe by which Takagi built his function?&lt;/strong&gt; In other words, if we keep the same triangular-wave framework but relax some choices, what new families of functions emerge?&lt;/p&gt;
-&lt;p&gt;A first and very natural generalization is obtained by &lt;strong&gt;modifying the coefficients in the series&lt;/strong&gt;. Recall that the original Takagi function is defined as&lt;/p&gt;
+&lt;p&gt;Instead, the question is more specific: &lt;em&gt;can we generalize the very recipe by which the Takagi function is built?&lt;/em&gt; In other words, if we keep the same triangular-wave framework but relax some choices, what new families of functions emerge?&lt;/p&gt;
+&lt;p&gt;A first and very natural generalization is obtained by modifying the coefficients in the series. Recall that the original Takagi function is defined as&lt;/p&gt;
 &lt;p&gt;$$
 T(x) = \sum_{n=0}^{\infty} \frac{\phi(2^n x)}{2^n},
 $$&lt;/p&gt;
@@ -127,7 +125,7 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 T_H(x) = \sum_{n=0}^{\infty} \frac{\phi(2^n x)}{2^{nH}}.
 $$&lt;/p&gt;
-&lt;p&gt;This parameter (H) is known as the &lt;strong&gt;Hurst parameter&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;What we have is a new, similarly constructed function, for every value of $H$. This is parameter $H$ is known as the &lt;strong&gt;Hurst parameter&lt;/strong&gt;. Notice the following:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;For $H \in (0,1)$, the function becomes rougher: the smaller (H) is, the slower the coefficients decay, so fine-scale oscillations contribute more strongly, producing a very jagged graph.&lt;/li&gt;
 &lt;li&gt;At $H=1$, we recover the &lt;strong&gt;classical Takagi function&lt;/strong&gt;.&lt;/li&gt;
@@ -153,19 +151,17 @@ $$&lt;/p&gt;
 &lt;li&gt;For larger $w$ (close to 1), the higher-order oscillations persist with significant weight, producing highly irregular, jagged graphs.&lt;/li&gt;
 &lt;li&gt;Remarkably, at special values of $w$, the function admits &lt;strong&gt;closed-form expressions&lt;/strong&gt;. For example, when $w = \tfrac{1}{4}$, the infinite sum collapses into a simple quadratic, giving a &lt;strong&gt;parabola&lt;/strong&gt;:&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;
-    &lt;img src=&#34;../w-parameter.gif&#34; alt=&#34;w-parameter.gif&#34;  loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;(Fun fact: This construction of the parabola, by midpoint subdivision, was described by Archimedes.)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;w-parameter.gif&#34; alt=&#34;w-parameter.gif&#34;  loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;This is a great start, but we can take it much further:&lt;/p&gt;
 &lt;h2&gt;3. The Takagi Class&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;3-the-takagi-class&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#3-the-takagi-class&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;So far we&amp;rsquo;ve been exploring Takagi-like functions with &lt;em&gt;geometric decay&lt;/em&gt;: $w^n$ coefficients. This makes the series neat, self-similar, and easy to visualize. But it&amp;rsquo;s natural to ask: &lt;strong&gt;what if we relax this restriction?&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Let $(w_n)_{n \geq 0} $ be a sequence of non-negative weights such that&lt;/p&gt;
+    &lt;a href=&#34;#3-the-takagi-class&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;So far we&amp;rsquo;ve been exploring Takagi-like functions with &lt;em&gt;geometric decay&lt;/em&gt;: $w^n$ coefficients. This makes the series neat, self-similar, and easy to visualize. But it&amp;rsquo;s natural to ask: &lt;em&gt;what if we relax this restriction? What if we allow for a richer set of sequences?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Let $(w_n)_{n \geq 0} $ be a sequence of weights such that&lt;/p&gt;
 &lt;p&gt;$$
-\sum_{n=0}^{\infty} w_n &amp;lt; \infty.
+\sum_{n=0}^{\infty} w_n &amp;lt; \infty. \tag{*}
 $$&lt;/p&gt;
 &lt;p&gt;By the &lt;strong&gt;Weierstrass M-test&lt;/strong&gt;, since $|\phi(x)| \leq \tfrac{1}{2}$, this condition is sufficient to guarantee that the following series converges uniformly, and hence defines a continuous function:&lt;/p&gt;
 &lt;p&gt;$$
-T_{\mathbf{w}}(x) = \sum_{n=0}^{\infty} w_n ,\phi(2^n x),
+T_{\mathbf{w}}(x) = \sum_{n=0}^{\infty} w_n \phi(2^n x),
 \qquad \phi(x) = \min(x,1-x).
 $$&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;(Observe that this definition of $\phi(x)$ is equivalent to our previous one for $x \in [0,1]$.)&lt;/em&gt;&lt;/p&gt;
@@ -178,11 +174,14 @@ $$&lt;/p&gt;
 &lt;li&gt;By choosing different sequences $(w_n)$, we can control the “roughness” of the function at different scales in very flexible ways.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Let’s visualize three simple weight sequences that meet our convergence criterion. Notice how, despite their different appearance, they all share continuity, fractal structure, and (depending on parameters) non-differentiability:&lt;/p&gt;
-&lt;p&gt;
-    &lt;img src=&#34;../weight-comparison.png&#34; alt=&#34;weight-comparison.png&#34;  loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;weight-comparison.png&#34; alt=&#34;weight-comparison.png&#34;  loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
 &lt;h3&gt;3.1. Differentiability Properties of the Takagi Class&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;31-differentiability-properties-of-the-takagi-class&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#31-differentiability-properties-of-the-takagi-class&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;So far, we have explored visually how the sequence $(w_n)$ shapes the &amp;ldquo;roughness&amp;rdquo; of the generalized Takagi function $T_{\mathbf{w}}(x)$. We can now state the main differentiability properties in a simpler, more rigorous way.&lt;/p&gt;
-&lt;p&gt;Let us consider the normalized sequence $\tilde{w}_n = w_n 2^n$, which essentially measures the contribution of each level in the series. Then, according to &lt;strong&gt;N. Kôno (1987)&lt;/strong&gt; [8]:&lt;/p&gt;
+    &lt;a href=&#34;#31-differentiability-properties-of-the-takagi-class&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;After having explored visually and intuitively how the sequence $(w_n)$ shapes the &amp;ldquo;roughness&amp;rdquo; of the generalized Takagi function $T_{\mathbf{w}}(x)$, we can now state the main differentiability properties in a simpler, more rigorous way.&lt;/p&gt;
+&lt;p&gt;Let us consider the normalized sequence $\tilde{w}_n = w_n 2^n$, where $w_n$ is a sequence of weights that satisfies (*). This essentially measures the deviation of each level in the series from the classic Takagi function:&lt;/p&gt;
+&lt;p&gt;$$
+T_{\mathbf{w}}(x) = \sum_{n=0}^{\infty} \tilde{w}_n \frac{\phi(2^n x)}{2^n}
+$$&lt;/p&gt;
+&lt;p&gt;Then, according to &lt;strong&gt;N. Kôno (1987)&lt;/strong&gt; [8]:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;$T_{\mathbf{w}}$ is &lt;strong&gt;nowhere differentiable&lt;/strong&gt; (there are no points at which a derivative is defined) if and only if&lt;/li&gt;
 &lt;/ol&gt;
@@ -204,18 +203,19 @@ $$&lt;/p&gt;
 \sum_n \left(\tilde{w}_n\right)^2 &amp;lt; \infty. \quad (\tilde{w}_n \in \ell_2)
 $$&lt;/p&gt;
 &lt;p&gt;i.e, the terms decay to zero fast enough for the higher-order bumps to not affect the differentiability of the function at most points. For example, $w_n = 2^{-3n/2} \leftrightarrow \tilde{w}_n = 2^{-n/2}, \quad \text{and} \quad \sum_n 2^{-n} &amp;lt; \infty$&lt;/p&gt;
-&lt;p&gt;Intuition:&lt;/p&gt;
+&lt;p&gt;Intuitively:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;If the finer details do not decay, the function is too &amp;ldquo;jagged&amp;rdquo; , and thus nowhere differentiable.&lt;/li&gt;
-&lt;li&gt;If they decay slowly, the function is almost nowhere differentiable, but its derivative still takes all values on a sparse, uncountable set.&lt;/li&gt;
-&lt;li&gt;If they decay quickly enough(square-summable), the function is smooth enough to be differentiable almost everywhere. In essence, the &lt;strong&gt;decay rate of $w_n2^n$&lt;/strong&gt; dictates the fractal roughness and differentiability behavior of the Takagi class function.&lt;/li&gt;
+&lt;li&gt;If the finer details decay similarly to how they do in the classic Takagi function, the function is too &amp;ldquo;jagged&amp;rdquo;, and thus nowhere differentiable.&lt;/li&gt;
+&lt;li&gt;If they decay faster than that, but not too fast, the function is almost nowhere differentiable, but its derivative still takes all values on a sparse, uncountable set.&lt;/li&gt;
+&lt;li&gt;If they decay quickly enough (square-summable), the function is smooth enough to be differentiable almost everywhere.&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;In essence, the &lt;strong&gt;decay rate of $\tilde{w}_n$&lt;/strong&gt; dictates the roughness and differentiability behavior of the Takagi class function.&lt;/p&gt;
 &lt;h2&gt;4. From dyadic tents to arbitrary point-clouds: the Ferrera–Gómez generalization&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;4-from-dyadic-tents-to-arbitrary-point-clouds-the-ferreragómez-generalization&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#4-from-dyadic-tents-to-arbitrary-point-clouds-the-ferrerag%c3%b3mez-generalization&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;4.1. The Generalized Takagi Function&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;41-the-generalized-takagi-function&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#41-the-generalized-takagi-function&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Let&amp;rsquo;s pause for a moment and look at the Takagi summand $\phi(2^n x) / 2^n$ in a slightly different way.&lt;/p&gt;
 &lt;p&gt;Instead of thinking of it as &amp;ldquo;the distance from $2^n x$ to the nearest integer, divided by $2^n$&amp;rdquo; we can equivalently view it as a function measuring &lt;strong&gt;the distance from $x$ to a set of points&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;$$
-D_n^{\mathrm{dyadic}} = \left\{ \frac{k}{2^n}: k = 0,1,\dots, 2^n \right\}
+D_n^{\mathrm{dyadic}} = \left\{ \frac{k}{2^n}: k = 0,1,\dots, 2^n \right\},
 $$&lt;/p&gt;
 &lt;p&gt;which is a subset of $[0,1]$ called the &lt;strong&gt;dyadic net at scale $2^{-n}$&lt;/strong&gt;. In other words, $\phi(2^n x) / 2^n$ is the distance from $x$ to the nearest point in $D_n^{\mathrm{dyadic}}$:&lt;/p&gt;
 &lt;p&gt;$$
@@ -230,13 +230,12 @@ $$&lt;/p&gt;
 T_{\mathbf{w}}(x) = \sum_{n=0}^{\infty} \tilde{w}_n  g_n^{\mathrm{dyadic}}(x),
 $$&lt;/p&gt;
 &lt;p&gt;where $\tilde{w}_n = w_n 2^n$, as defined in the previous section.&lt;/p&gt;
-&lt;p&gt;($w_n \phi(2^n x) = w_n 2^n \frac{\phi(2^n x)}{2^n} = \tilde{w}_n g_n^{\mathrm{dyadic}}(x)$)&lt;/p&gt;
+&lt;p&gt;($w_n \phi(2^n x) = w_n 2^n \frac{\phi(2^n x)}{2^n} = \tilde{w}_n g_n^{\mathrm{dyadic}}(x)$).&lt;/p&gt;
 &lt;p&gt;Now, it&amp;rsquo;s natural to ask the following question:&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;What&amp;rsquo;d happen if we kept the same mechanic, stacking tents at finer and finer scales, but replaced the dyadic net $D_n^{\mathrm{dyadic}}$ with some other sets of points?&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Could we still get a continuous, nowhere differentiable function? Could we vary the shape and spacing of the bumps, yet retain the same multiscale structure that makes Takagi functions so fractal?&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;
-    &lt;img src=&#34;../grid-change.gif&#34; alt=&#34;grid-change.gif&#34;  loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;In this gif, we&amp;rsquo;re switching between a Dyadic subset of $[0,1]$: $D_4^{\mathrm{dyadic}}$ and a somewhat arbitrary subset of $[0,1]$. Notice how this inflences our function $g_4(x)=\operatorname{dist}(x,D_4)$.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;grid-change.gif&#34; alt=&#34;grid-change.gif&#34;  loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;In this gif, we&amp;rsquo;re switching between a Dyadic subset of $[0,1]$: $D_4^{\mathrm{dyadic}}$ and a somewhat arbitrary (yet controlled) subset of $[0,1]$. Notice how this influences our function $g_4(x)=\operatorname{dist}(x,D_4)$.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;This is precisely the idea behind the &lt;strong&gt;Ferrera–Gómez generalisation&lt;/strong&gt; [3]. They realised that the key ingredient in the classical construction is &lt;strong&gt;not the dyadic grid itself&lt;/strong&gt;, but rather the fact that:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Each level $n$ corresponds to a &lt;strong&gt;finite set of points $D_n$ in $[0,1]$&lt;/strong&gt;.&lt;/li&gt;
@@ -267,9 +266,11 @@ $$&lt;/p&gt;
 &lt;p&gt;is continuous on $[0,1]$ and is nowhere differentiable.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;em&gt;(Interestingly, it can be proven that, for any dense and countable set $D \subset [0,1]$, we can find a sequence $(D_n)_n$ (a decomposition of $D$) such that the above conditions are met).&lt;/em&gt;&lt;/p&gt;
+&lt;hr&gt;
 &lt;p&gt;But why are these rules, especially the third one about spacing, so important?&lt;/p&gt;
-&lt;p&gt;As Ferrera, Gómez Gil, and Llorente explore in their work, these conditions are the guardrails that prevent the function from becoming accidentally &amp;ldquo;smooth&amp;rdquo; at certain points. Imagine if the points in the sets $D_n$ could bunch up arbitrarily. It might be possible to construct a sequence of tents whose slopes cancel each other out, creating a point where a derivative unexpectedly exists. The conditions ensure that the &amp;ldquo;jaggedness&amp;rdquo; is distributed consistently across all scales, preserving the nowhere differentiable character that is the hallmark of the Takagi family. [4, 5]&lt;/p&gt;
-&lt;p&gt;In fact, Example 10 in their paper cleverly demonstrates that without such a spacing condition, a function in the class can indeed become differentiable at certain points, even when the weights suggest it should be completely &amp;ldquo;rough&amp;rdquo;. These rules are the secret ingredient that guarantees a robustly fractal structure. [5]&lt;/p&gt;
+&lt;p&gt;As Ferrera, Gómez Gil, and Llorente explore in their work [4, 5], these conditions are the guardrails that prevent the function from becoming accidentally &amp;ldquo;smooth&amp;rdquo; at certain points. Imagine if the points in the sets $D_n$ could bunch up arbitrarily. It might be possible to construct a sequence of tents whose slopes cancel each other out, creating a point where a derivative unexpectedly exists. The conditions ensure that the &amp;ldquo;jaggedness&amp;rdquo; is distributed consistently across all scales, preserving the nowhere differentiable character that is the hallmark of the Takagi family.&lt;/p&gt;
+&lt;p&gt;In fact, Example 10 in their paper cleverly demonstrates that without such a spacing condition, a function in the class can indeed become differentiable at certain points, even when the weights suggest it should be completely &amp;ldquo;rough&amp;rdquo;. These rules are the perfect guardrails that guarantee a robustly fractal and jagged structure [5].&lt;/p&gt;
+&lt;hr&gt;
 &lt;p&gt;Once you see it this way, a whole universe of generalized Takagi functions opens up: instead of the dyadic net, you can choose &lt;strong&gt;any sequence of finite point sets $D_n$&lt;/strong&gt; satisfying suitable spacing conditions. The distance functions to these sets, summed across $n$, produce functions that are continuous, nowhere differentiable, and still retain that multiscale, tent-stacking geometry.&lt;/p&gt;
 &lt;p&gt;In short, the classical Takagi function is just the &lt;strong&gt;special case where the finite sets are the dyadic nets&lt;/strong&gt;. Once you abstract to arbitrary point-clouds, you see that nowhere differentiability is a structural consequence of the multiscale tents, not of the dyadic numbers per se. And that is the essence of the Ferrera–Gómez generalisation: build your own &amp;ldquo;clouds of tents&amp;rdquo; at all scales, and you still get a continuous, nowhere differentiable function. Thus, we define the (Unweighted) &lt;strong&gt;Generalised Takagi Function&lt;/strong&gt; by
 $$
@@ -277,44 +278,47 @@ T_D(x)=\sum_{n=0}^\infty g_n(x),\qquad g_n(x)=\operatorname{dist}(x,D_n).
 $$&lt;/p&gt;
 &lt;p&gt;Where $(D_n)_n$ is a sequence of sets that fulfills the aforementioned conditions.&lt;/p&gt;
 &lt;p&gt;Intuitively: each $g_n(x)=\operatorname{dist}(x,D_n)$ is $1$-Lipschitz ($|g_n(x)-g_n(y)| \leq |x-y|$. i.e., its slope is never greater than 1) and, on each gap between consecutive points of $D_n$, looks exactly like a triangular tent: it rises linearly with slope $\pm1$ from one gap endpoint to the centre and falls symmetrically.&lt;/p&gt;
+&lt;p&gt;Now, we can look at the previous gif through the newly discovered lens of our generalised framework:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;grid-change.gif&#34; alt=&#34;grid-change.gif&#34;  loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
 &lt;h3&gt;4.2. The Generalized Takagi Class&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;42-the-generalized-takagi-class&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#42-the-generalized-takagi-class&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Now, it&amp;rsquo;s natural to take every new &amp;ldquo;degree of freedom&amp;rdquo; we have discovered thus far and simply combine them. This is precisely what the &lt;strong&gt;Generalized Takagi class&lt;/strong&gt; of functions is. Combining the ideas of their Generalized Takagi Function, with its set decompositions, and the previously explored weight sequences, they defined the Generalized Takagi class as follows: [5]&lt;/p&gt;
+    &lt;a href=&#34;#42-the-generalized-takagi-class&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Now, it&amp;rsquo;s natural to take every new &amp;ldquo;degree of freedom&amp;rdquo; we have discovered thus far and simply combine them. This is precisely what the &lt;strong&gt;Generalized Takagi class&lt;/strong&gt; of functions is. Combining the ideas of their Generalized Takagi Function, with its set decompositions, and the previously explored weight sequences, the authors defined the Generalized Takagi class as follows: [5]&lt;/p&gt;
 &lt;p&gt;Let $\mathcal{D} = (D_n)_{n\ge 0}$ be a decomposition of a countable dense set $D\subset[0,1]$ that fulfills the aforementioned criteria.&lt;/p&gt;
-&lt;p&gt;For a &lt;strong&gt;sequence of weights&lt;/strong&gt; $w = {(w_n)_n}$, satisfying&lt;/p&gt;
+&lt;p&gt;For a &lt;strong&gt;sequence of weights&lt;/strong&gt; $w = {(\tilde{w}_n)_n}$, satisfying&lt;/p&gt;
 &lt;p&gt;$$
-\sum_{n=0}^\infty w_n \alpha_n  &amp;lt; \infty,
+\sum_{n=0}^\infty \tilde{w}_n \alpha_n  &amp;lt; \infty,
 $$&lt;/p&gt;
 &lt;p&gt;the &lt;strong&gt;Generalized Takagi function&lt;/strong&gt; associated to $\mathcal{D}$ and $w$ is defined by&lt;/p&gt;
 &lt;p&gt;$$
-T_{D,w}(x) = \sum_{n=0}^{\infty} w_n, g_n(x), \qquad g_n(x) = \operatorname{dist}(x,D_n).
+T_{D,w}(x) = \sum_{n=0}^{\infty} \tilde{w}_n g_n(x), \qquad g_n(x) = \operatorname{dist}(x,D_n).
 $$&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;(In the case of the Takagi Class ($D_n = D_n^{\mathrm{dyadic}}$), $\alpha_n = \frac{1}{2^n}$, which makes the summability condition identical to the one established previously for $w_n = \frac{\tilde{w}_n}{2^n}$)&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Under some mild extra conditions on the decomposition, the &lt;strong&gt;Generalized Takagi Class&lt;/strong&gt; forms a closed subspace of $C[0,1]$, isomorphic to $\ell^1$ &lt;em&gt;(it is a subset of continuous functions on ([0,1]) such that whenever you take a sequence of its functions that converges, the limit still belongs to the subset, and each function in it corresponds uniquely to a summable sequence of numbers, with the &amp;ldquo;size&amp;rdquo; of the function reflecting the total sum of that sequence).&lt;/em&gt; [5]&lt;/p&gt;
 &lt;h4&gt;Why this generalisation makes sense&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;why-this-generalisation-makes-sense&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#why-this-generalisation-makes-sense&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;The classical Takagi function corresponds to a very regular dyadic net $D_n = {k/2^n}$ and equal weights $w_n = 1/2^n$.&lt;/li&gt;
-&lt;li&gt;In the generalized class, we allow both &lt;strong&gt;flexible point sets $D_n$&lt;/strong&gt; (still increasingly dense with controlled spacing) and &lt;strong&gt;flexible weights $w_n$&lt;/strong&gt;, while keeping the multiscale “stacking tents” intuition.&lt;/li&gt;
-&lt;li&gt;The continuity and fractal behavior of the classical Takagi function survive, but now we can explore a &lt;strong&gt;much larger family of functions&lt;/strong&gt;, including exotic examples with tailored differentiability or fractal properties.&lt;/li&gt;
+&lt;li&gt;The classical Takagi function corresponds to a very regular dyadic net $D_n = \{k/2^n\}$ and equal weights $\tilde{w}_n = 1/2^n$.&lt;/li&gt;
+&lt;li&gt;In the generalized class, we allow both &lt;strong&gt;flexible point sets $D_n$&lt;/strong&gt; (still increasingly dense with controlled spacing) and &lt;strong&gt;flexible weights $\tilde{w}_n$&lt;/strong&gt;, while keeping the multiscale “stacking tents” intuition.&lt;/li&gt;
+&lt;li&gt;The continuity and fractal behavior of the classical Takagi function survive, but now we can explore a &lt;strong&gt;much larger family of functions&lt;/strong&gt;, including exotic examples with tailored differentiability or fractal properties.
++&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4&gt;A Simple Litmus Test for Nowhere Differentiability&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;a-simple-litmus-test-for-nowhere-differentiability&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#a-simple-litmus-test-for-nowhere-differentiability&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;After building this sophisticated framework, a crucial question remains: can we find a simple rule to determine when a function $T_{D,w}(x)$ is nowhere differentiable? Must we check the intricate properties of the decomposition $D$ every time?&lt;/p&gt;
 &lt;p&gt;This is where the paper provides a remarkably elegant answer. Under some very general conditions on the decomposition (for instance, that the sets are nested, $D_n \subset D_{n+1}$, or that new points are added in every interval of the previous set), the behavior of the function depends &lt;strong&gt;only on the sequence of weights $w$&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;The authors prove a powerful generalization of Kôno&amp;rsquo;s theorem. They show that the function $T_{D,w}$ is &lt;strong&gt;nowhere differentiable if and only if the sequence of weights $w$ does not belong to $c_0$&lt;/strong&gt;. [4, 5]&lt;/p&gt;
-&lt;p&gt;What does it mean for a sequence to be in $c_0$? It&amp;rsquo;s simple: a sequence $(w_n)$ belongs to $c_0$ if it converges to zero. So, the condition for being nowhere differentiable is just:&lt;/p&gt;
+&lt;p&gt;The authors prove a powerful generalization of Kôno&amp;rsquo;s theorem. They show that the function $T_{D,w}$ is &lt;strong&gt;nowhere differentiable if and only if the sequence of weights $w$ does not converge to 0&lt;/strong&gt;: [4, 5]&lt;/p&gt;
 &lt;blockquote&gt;
-  &lt;p&gt;A function in the Generalized Takagi Class is nowhere differentiable if and only if its weights $w_n$ &lt;strong&gt;do not fade to zero&lt;/strong&gt;.
-$$
-\lim_{n \to \infty} w_n \neq 0
+  &lt;p&gt;A function in the Generalized Takagi Class is nowhere differentiable if and only if its weights $\tilde{w}_n$ &lt;strong&gt;do not fade to zero&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;$$
+\lim_{n \to \infty} \tilde{w}_n \neq 0
 $$&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;This is a fantastic result. It tells us that as long as the weights themselves maintain some persistent strength and don&amp;rsquo;t ultimately vanish, their contribution is strong enough to guarantee that the function remains jagged and irregular at every single point. The specific arrangement of the points in $D_n$ doesn&amp;rsquo;t matter for this core property, as long as they follow the basic rules of the road we&amp;rsquo;ve already laid out.&lt;/p&gt;
-&lt;h4&gt;An Unexpected Simplification: The Power of Positivity&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;an-unexpected-simplification-the-power-of-positivity&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#an-unexpected-simplification-the-power-of-positivity&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;The story has one more beautiful twist. We&amp;rsquo;ve seen that to guarantee nowhere differentiability, we often need certain conditions on the decomposition $(D_n)_n$ to prevent unwanted cancellations. However, the paper reveals something remarkable: if we restrict our sequence of weights $w = (w_n)_n$ to be &lt;strong&gt;non-negative&lt;/strong&gt; (i.e., $w_n \ge 0$ for all $n$), then all those extra conditions on the decomposition can be thrown away!&lt;/p&gt;
+&lt;p&gt;This is a fantastically simple result. It tells us that as long as the weights themselves maintain some persistent strength and don&amp;rsquo;t ultimately vanish, their contribution is strong enough to guarantee that the function remains jagged and irregular at every single point. The specific arrangement of the points in $D_n$ doesn&amp;rsquo;t matter for this core property, as long as they follow the basic rules of the road we&amp;rsquo;ve already laid out.&lt;/p&gt;
+&lt;h4&gt;An Unexpected Simplification: The Power of Non-Negative Weights&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;an-unexpected-simplification-the-power-of-non-negative-weights&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#an-unexpected-simplification-the-power-of-non-negative-weights&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;This story, however, has one more beautiful twist. We&amp;rsquo;ve seen that to guarantee nowhere differentiability, we often need certain conditions on the decomposition $(D_n)_n$ to prevent unwanted cancellations. Nevertheless, the paper reveals something remarkable: if we restrict our sequence of weights $w = (w_n)_n$ to be &lt;strong&gt;non-negative&lt;/strong&gt; (i.e., $w_n \ge 0$ for all $n$), then all those extra conditions on the decomposition can be thrown away!&lt;/p&gt;
 &lt;p&gt;Specifically, Corollary 22 in the paper states that: [5]&lt;/p&gt;
 &lt;blockquote&gt;
-  &lt;p&gt;If the weights $w_n$ are all non-negative and do not converge to zero, the function $T_{D,w}$ is &lt;strong&gt;nowhere differentiable&lt;/strong&gt;, with no extra assumptions on the decomposition needed.&lt;/p&gt;
+  &lt;p&gt;Assume that $w \not\rightarrow 0$ and $w_n \geq 0$ for every $n$. Then, $T_{D,w}$ is nowhere differentiable. (Without any additional condition on $D$).&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;The intuition here is wonderfully clear. When all weights are positive, every &amp;ldquo;tent&amp;rdquo; $w_n g_n(x)$ is added constructively. There&amp;rsquo;s no possibility for slopes to cancel each other out, which could happen if some weights were negative and produced &amp;ldquo;inverted tents&amp;rdquo;. The jaggedness just keeps piling up at every scale, ensuring the function is rough everywhere.&lt;/p&gt;
-&lt;p&gt;This shows that the fundamental tent-stacking geometry is incredibly robust at producing nowhere differentiable functions, especially when we don&amp;rsquo;t allow for any destructive interference. It’s a final, elegant insight into the deep structure of these fascinating functions.&lt;/p&gt;
+&lt;p&gt;This is a beautiful result. When all weights are positive, every &amp;ldquo;tent&amp;rdquo; $w_n g_n(x)$ is added constructively. There&amp;rsquo;s no possibility for slopes to cancel each other out, which could happen if some weights were negative and produced &amp;ldquo;inverted tents&amp;rdquo;. Thus, the jaggedness just keeps piling up at every scale, ensuring the function is rough everywhere.&lt;/p&gt;
+&lt;p&gt;This shows that the fundamental tent-stacking geometry is incredibly robust at producing nowhere differentiable functions, especially when we don&amp;rsquo;t allow for any destructive interference.&lt;/p&gt;
 &lt;h2&gt;5. The Original Formulation: Binary Expansion&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;5-the-original-formulation-binary-expansion&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#5-the-original-formulation-binary-expansion&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Having explored the vast landscape of generalized Takagi functions, let&amp;rsquo;s take a step back and appreciate the ingenious origin of the classical function. Although it may be surprising, Takagi himself did not define his function using triangular tents. Instead, he found it somewhere (at first glance) completely unrelated: &lt;strong&gt;the binary representation of positive numbers smaller than 1.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Let’s follow his footsteps, and then gradually rewrite his definition until we rediscover the modern, geometric definition we&amp;rsquo;ve come to know.&lt;/p&gt;
@@ -333,20 +337,19 @@ $$&lt;/p&gt;
 &lt;li&gt;$x = 0.101_2 = \tfrac{1}{2} + \tfrac{0}{4} + \tfrac{1}{8} = \tfrac{5}{8}$.&lt;/li&gt;
 &lt;li&gt;$x = 0.011_2 = \tfrac{0}{2} + \tfrac{1}{4} + \tfrac{1}{8} = \tfrac{3}{8}$.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Dyadic rationals, like $\tfrac12$, have two expansions: $0.1000\dots_2$ and %0.0111\dots_2%, similar to how $0.999\ldots = 1.000 $ in decimal.&lt;/p&gt;
-&lt;p&gt;With this, Takagi defined his function as: [9, 1]&lt;/p&gt;
+&lt;p&gt;Dyadic rationals, like $\tfrac12$, have two expansions: $0.1000\dots_2$ and $0.0111\dots_2$, similar to how $0.999\ldots = 1.000 $ in decimal.&lt;/p&gt;
+&lt;p&gt;With this, Takagi defined his function as: [10, 1, 9]&lt;/p&gt;
 &lt;p&gt;$$
 T(x) := \sum_{m=1}^\infty \frac{1}{2^m} \sum_{k=1}^{m-1} \bigl|\varepsilon_m - \varepsilon_k\bigr|.
-\tag{★}
 $$&lt;/p&gt;
-&lt;p&gt;In short, for each digit $\varepsilon_m$, this formula counts how many &lt;em&gt;earlier&lt;/em&gt; digits ($\varepsilon_1, \dots, \varepsilon_{m-1}$) it disagrees with, weights that count by $2^{-m}$, and sums these values.&lt;/p&gt;
+&lt;p&gt;In short, for each digit $\varepsilon_m$, this formula counts how many &lt;em&gt;earlier&lt;/em&gt; digits ($\varepsilon_1, \dots, \varepsilon_{m-1}$) the current digit &amp;ldquo;disagrees&amp;rdquo; with, weights that count by $2^{-m}$, and sums these values.&lt;/p&gt;
 &lt;h3&gt;Bridging to the Geometric View&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;bridging-to-the-geometric-view&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#bridging-to-the-geometric-view&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Takagi&amp;rsquo;s formula is a double sum. Since all its terms are positive, we can legally change the order of summation. Instead of grouping by the outer digit $\varepsilon_m$, we can regroup by the inner digit $\varepsilon_k$ and sum its interactions with all &lt;em&gt;later&lt;/em&gt; digits $\varepsilon_m$. After some re-indexing, this reveals a much clearer structure:&lt;/p&gt;
 &lt;p&gt;$$
 T(x) = \sum_{n=0}^\infty \left( \sum_{j=1}^\infty \frac{|\varepsilon_{n+j} - \varepsilon_{n+1}|}{2^{n+j}} \right)
 $$&lt;/p&gt;
 &lt;h3&gt;The key step: why bit disagreements measure a dyadic distance&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;the-key-step-why-bit-disagreements-measure-a-dyadic-distance&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#the-key-step-why-bit-disagreements-measure-a-dyadic-distance&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The expression in the parenthesis is the crucial link. We can show that it is identical to the height of our triangular tents: [1]
+    &lt;a href=&#34;#the-key-step-why-bit-disagreements-measure-a-dyadic-distance&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The expression in the parenthesis is the crucial link. We can show that it is identical to the height of our triangular tents: [1, 9]
 $$
 \sum_{j=1}^\infty \frac{|\varepsilon_{n+j}-\varepsilon_{n+1}|}{2^{,n+j}}
 = \frac{\phi(2^n x)}{2^n}
@@ -397,17 +400,12 @@ $$
 &lt;p&gt;$$
 T(x) = \sum_{n=0}^\infty \frac{\phi(2^n x)}{2^n}.
 $$&lt;/p&gt;
-&lt;p&gt;We started with a strange combinatorial recipe—counting digit disagreements—and by re-grouping the sum, discovered it is identical to stacking infinitely many self-similar triangular waves.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Takagi’s binary view&lt;/strong&gt;: $T(x)$ measures disagreement between digits.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Modern geometric view&lt;/strong&gt;: $T(x)$ is a superposition of triangular waves.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;They are two sides of the same coin: one discrete and combinatorial, the other continuous and geometric. This duality is precisely what makes the Takagi function such a beautiful and surprising object.&lt;/p&gt;
+&lt;p&gt;We started with a strange combinatorial problem: counting digit disagreements, and by re-grouping the sum, we discovered it is identical to stacking infinitely many self-similar triangular waves. This duality is precisely what makes the Takagi function such a beautiful and surprising mathematical object.&lt;/p&gt;
 &lt;h2&gt;6. Where the Wild Functions Are: Surprising Applications&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;6-where-the-wild-functions-are-surprising-applications&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#6-where-the-wild-functions-are-surprising-applications&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;After tracing the Takagi function&amp;rsquo;s journey from a curious combinatorial formula to a vast geometric generalization, a fair question arises: Is this just a beautiful, abstract playground for mathematicians? Or does this &amp;ldquo;monster&amp;rdquo; ever escape the zoo and appear in other fields?&lt;/p&gt;
-&lt;p&gt;The answer, as [1] shows, is a resounding yes. The Takagi function&amp;rsquo;s unique blend of continuity and jaggedness makes it the perfect tool to describe phenomena in fields that seem, at first glance, completely unrelated. Let&amp;rsquo;s explore two of the most elegant examples.&lt;/p&gt;
+&lt;p&gt;The answer, as [1] shows, is a resounding yes. The Takagi function&amp;rsquo;s unique role as a bridge between discrete digital structures and continuous fractal geometry makes it the perfect tool to describe phenomena in fields that seem, at first glance, completely unrelated. Let&amp;rsquo;s explore two of the most elegant examples.&lt;/p&gt;
 &lt;h3&gt;1. The Secret Accountant of Binary Digits&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;1-the-secret-accountant-of-binary-digits&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#1-the-secret-accountant-of-binary-digits&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Our journey began with binary expansions, and in a beautiful full-circle moment, we find one of the function&amp;rsquo;s most remarkable applications right back there.&lt;/p&gt;
+    &lt;a href=&#34;#1-the-secret-accountant-of-binary-digits&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The story of the Takagi function began with binary expansions, and in a beautiful full-circle moment, we find one of the function&amp;rsquo;s most remarkable applications right back there.&lt;/p&gt;
 &lt;p&gt;Consider a simple question from number theory: If you write out all the integers from 0 to $N-1$ in binary, how many times does the digit &amp;lsquo;1&amp;rsquo; appear in total?&lt;/p&gt;
 &lt;p&gt;Let&amp;rsquo;s define $s(n)$ as the &lt;strong&gt;binary digital sum&lt;/strong&gt; of an integer $n$. For example, since $n=5$ is &lt;code&gt;101&lt;/code&gt; in binary, $s(5)=2$. Since $n=12$ is &lt;code&gt;1100&lt;/code&gt;, $s(12)=2$. We are interested in the total sum:&lt;/p&gt;
 &lt;p&gt;$$
@@ -417,16 +415,21 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 S_1(2^k) = \frac{2^k \cdot k}{2} = \frac{N \log_2 N}{2}
 $$&lt;/p&gt;
-&lt;p&gt;But what happens for an arbitrary $N$ that isn&amp;rsquo;t a power of two? The beautiful symmetry is broken. The formula becomes a good approximation, but there&amp;rsquo;s an error. Mathematicians Trollope and Delange showed that this error is not random noise [10, 2]. It is a deterministic, fluctuating term governed precisely by the Takagi function.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;(Notice that the numbers between $0$ and $2^k - 1$ fill out all possible combinations of $k$ zeroes and ones. Thus, each bit position takes the value &amp;lsquo;1&amp;rsquo; in exactly half of those combinations, and &amp;lsquo;0&amp;rsquo; in the other half. With $2^k$ numbers and $k$ bit positions, this means there are $2^k \cdot \tfrac{k}{2}$ ones in total, giving the formula above.)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;But what happens for an arbitrary $N$ that isn&amp;rsquo;t a power of two? The beautiful symmetry is broken. The formula becomes a good approximation, but there&amp;rsquo;s an error. Mathematicians Trollope and Delange worked, precisely, on investigation this particual error term.&lt;/p&gt;
 &lt;p&gt;The exact expression is:&lt;/p&gt;
 &lt;p&gt;$$
-S_1(N) = \frac{N \log_2 N}{2} + E(N)
+S_1(N) = \frac{N \log_2 N}{2} - E(N)
 $$&lt;/p&gt;
-&lt;p&gt;where the error term, $E(N)$, is given by a formula involving $T(x)$ [1]. If we write $N$ in the form $N = 2^m(1+x)$ where $m$ is an integer and $0 \le x &amp;lt; 1$, then:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;takagi_s1_visual.png&#34; alt=&#34;takagi_s1_visual.png&#34;  loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;(The grey vertical lines mark the powers of two).&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How exactly can we describe this error term $E(N)$?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Well, as you might suspect, the error is given by a formula involving Takagi&amp;rsquo;s function [1]. If we write $N$ in the form $N = 2^m(1+x)$ where $m$ is an integer and $0 \le x &amp;lt; 1$ (so that $2^m$ is the biggest power of two smaller than $N$, and $(1+x)$ is $N/{2^m}$, then:&lt;/p&gt;
 &lt;p&gt;$$
 E(N) = 2^{m-1} \left\{ 2x - T(x) - (1+x)\log_2(1+x) \right\}
 $$&lt;/p&gt;
-&lt;p&gt;This is a stunning result. It reveals that the classical Takagi function is the &lt;em&gt;exact&lt;/em&gt; oscillating correction term that measures the deviation from the average when counting digits. The continuous, nowhere-differentiable &amp;ldquo;monster&amp;rdquo; emerges naturally from a simple, discrete counting problem in number theory. It is the mathematical embodiment of the &amp;ldquo;fractal noise&amp;rdquo; created by moving away from the perfect symmetry of powers of two.&lt;/p&gt;
+&lt;p&gt;Seen from afar, $S_1(N)$ almost looks ike a straight line on a chart. But zoom in, and you notice a subtle wiggle: a fluctuation intimately related to the binary expression of $N$. That wiggle is none other than the Takagi function itself, hiding in plain sight. It’s as if the continuous curve were keeping perfect bookkeeping of the discrete dance between zeros and ones:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;takagi_error.png&#34; alt=&#34;takagi_error.png&#34;  loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
 &lt;h3&gt;2. Finding the Optimal Shape in a Hypercube&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;2-finding-the-optimal-shape-in-a-hypercube&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#2-finding-the-optimal-shape-in-a-hypercube&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Let&amp;rsquo;s switch gears from number theory to geometry and combinatorics. Imagine a simple square. It has 4 vertices and 4 edges. Now imagine a cube in 3D; it has 8 vertices and 12 edges. We can keep going: a 4D hypercube (a tesseract) has 16 vertices and 32 edges. This structure is called the &lt;strong&gt;n-cube&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Now, consider the following puzzle, known as the &lt;strong&gt;discrete isoperimetric problem&lt;/strong&gt;:&lt;/p&gt;
@@ -444,7 +447,7 @@ $$&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;The value of $T(x)$ for a given fraction $x$ represents the proportion of boundary edges for the most efficient cluster occupying that fraction of the cube&amp;rsquo;s vertices.&lt;/li&gt;
 &lt;li&gt;The points where $T(x)$ is low correspond to very efficient ways of clustering vertices.&lt;/li&gt;
-&lt;li&gt;The unique maximum of $T(x)$ at $x=1/2$ corresponds to the fact that the least efficient choice is to pick exactly half the vertices. This maximizes the boundary, like cutting the cube perfectly in half.&lt;/li&gt;
+&lt;li&gt;The unique minimum of $T(x)$ at $x=1/2$ corresponds to the fact that the most efficient choice is to pick exactly half the vertices. This minimizes the boundary, like cutting the cube perfectly in half.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Once again, a seemingly chaotic, nowhere-differentiable function provides the elegant and universal answer to a problem in a completely different domain: the geometry of high-dimensional networks.&lt;/p&gt;
 &lt;hr&gt;
@@ -458,6 +461,7 @@ $$&lt;/p&gt;
 &lt;li&gt;&lt;strong&gt;Guu, C. J.&lt;/strong&gt; (2000). The McFunction [The Takagi function]. &lt;em&gt;Discrete Mathematics&lt;/em&gt;, 213(1-3), 163-167.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Hata, M., &amp;amp; Yamaguti, M.&lt;/strong&gt; (1984). Takagi function and its generalization. &lt;em&gt;Japan Journal of Applied Mathematics&lt;/em&gt;, 1(1), 183-199.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Kôno, N.&lt;/strong&gt; (1987). On generalized Takagi functions. &lt;em&gt;Acta Mathematica Hungarica&lt;/em&gt;, 49(3-4), 315-324.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Lagarias, J. C.&lt;/strong&gt; (2012). The Takagi Function and Its Properties. &lt;em&gt;arXiv preprint arXiv:1112.4205&lt;/em&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Takagi, T.&lt;/strong&gt; (1903). A simple example of the continuous function without derivative. &lt;em&gt;Proc. Phys.-Math. Soc. Japan&lt;/em&gt;, 1, 176-177.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Trollope, J. R.&lt;/strong&gt; (1968). An explicit expression for binary digital sums. &lt;em&gt;Mathematics Magazine&lt;/em&gt;, 41(1), 21-25.&lt;/li&gt;
 &lt;/ol&gt;

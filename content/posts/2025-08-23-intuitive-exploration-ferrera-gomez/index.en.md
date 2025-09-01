@@ -2,7 +2,7 @@
 title = "An intuitive exploration of the Ferrera–Gómez Generalized Takagi Class"
 date = 2025-08-23T23:39:22+02:00
 draft = false
-description = "A step-by-step and intuitive approach to the Ferrera–Gómez Generalized Takagi Class, exploring how simple definitions can conceal remarkably intricate behavior in mathematical functions."
+description = "A step-by-step and intuitive approach to the Ferrera–Gómez Generalized Takagi Class, where we'll discover the mental model that drives mathematical development."
 tags = ["mathematics", "real-analysis", "takagi-function", "pathological-functions", "continuity", "differentiability"]
 categories = ["mathematics", "analysis"]
 math = true
@@ -47,11 +47,11 @@ $$
 
 In other words, $\phi(x)$ is the familiar *triangle wave*, with peaks at half-integers $k + \tfrac{1}{2}$ and valleys at integers $k \in \mathbb{Z}$. Thus, at $n=0$, our first term takes the following shape:
 
-![phiofx.png](phiofx.png)
+{{< figure src="phiofx.png" alt="phiofx.png" >}}
 
 At $n=1$, we add $\frac{\phi(2x)}{2}$, which looks like a half-size version of our previous function:
 
-![phiof2xover2.png](phiof2xover2.png)
+{{< figure src="phiof2xover2.png" alt="phiof2xover2.png" >}}
 
 As $n$ increases, each new term contributes a smaller triangular wave, successively halved in amplitude and doubled in frequency. The process can be viewed as layering finer and finer triangular ripples on top of the initial wave.  
 
@@ -59,7 +59,7 @@ The crucial point is that the early terms determine the *broad shape* of the cur
 
 *(Observe how every new "vertex" created in each iteration will remain fixed thereafter, as the maxima of $\phi(2^n x)$  coincide with the zeros of $\phi(2^m x)$, for all  $m>n$)*.
 
-![takagi-construction.gif](takagi-construction.gif)
+{{< figure src="takagi-construction.gif" alt="takagi-construction.gif" >}}
 
 
 ### 1.1. Properties of the Takagi function:
@@ -140,11 +140,11 @@ $$
 T(x)=T(x_0)+2^{-n}\,T\big(2^n(x-x_0)\big),
 $$
 
-where $x_0=\tfrac{k}{2^n}$ is the left endpoint of the interval.
+where $x_0=\tfrac{k}{2^n}$ is the left endpoint of the interval [1, 9].
 
 Essentially, one can find infinitely many smaller copies of the Takagi curve, nested at every dyadic scale: 
 
-![ezgif-6dd4ff4bf27fb7.gif](ezgif-6dd4ff4bf27fb7.gif)
+{{< figure src="ezgif-6dd4ff4bf27fb7.gif" alt="ezgif-6dd4ff4bf27fb7.gif" >}}
 
 ## 2. The Takagi–Landsberg family: The first generalization
 
@@ -197,7 +197,7 @@ Different values of $w$ correspond to different “levels of roughness” or smo
 - For larger $w$ (close to 1), the higher-order oscillations persist with significant weight, producing highly irregular, jagged graphs.  
 - Remarkably, at special values of $w$, the function admits **closed-form expressions**. For example, when $w = \tfrac{1}{4}$, the infinite sum collapses into a simple quadratic, giving a **parabola**:
 
-![w-parameter.gif](w-parameter.gif)
+{{< figure src="w-parameter.gif" alt="w-parameter.gif" >}}
 
 This is a great start, but we can take it much further:
 
@@ -231,7 +231,7 @@ Some important points:
 
 Let’s visualize three simple weight sequences that meet our convergence criterion. Notice how, despite their different appearance, they all share continuity, fractal structure, and (depending on parameters) non-differentiability:  
 
-![weight-comparison.png](weight-comparison.png)
+{{< figure src="weight-comparison.png" alt="weight-comparison.png" >}}
 
 
 ### 3.1. Differentiability Properties of the Takagi Class
@@ -317,7 +317,7 @@ Now, it's natural to ask the following question:
 
 *Could we still get a continuous, nowhere differentiable function? Could we vary the shape and spacing of the bumps, yet retain the same multiscale structure that makes Takagi functions so fractal?*
 
-![grid-change.gif](grid-change.gif)
+{{< figure src="grid-change.gif" alt="grid-change.gif" >}}
 
 *In this gif, we're switching between a Dyadic subset of $[0,1]$: $D_4^{\mathrm{dyadic}}$ and a somewhat arbitrary (yet controlled) subset of $[0,1]$. Notice how this influences our function $g_4(x)=\operatorname{dist}(x,D_4)$.*
 
@@ -377,7 +377,7 @@ Intuitively: each $g_n(x)=\operatorname{dist}(x,D_n)$ is $1$-Lipschitz ($|g_n(x)
 
 Now, we can look at the previous gif through the newly discovered lens of our generalised framework: 
 
-![grid-change.gif](grid-change.gif)
+{{< figure src="grid-change.gif" alt="grid-change.gif" >}}
 
 
 ### 4.2. The Generalized Takagi Class
@@ -404,10 +404,10 @@ Under some mild extra conditions on the decomposition, the **Generalized Takagi 
 
 #### Why this generalisation makes sense
 
-- The classical Takagi function corresponds to a very regular dyadic net $D_n = \\{k/2^n\\}$ and equal weights $w_n = 1/2^n$.  
-- In the generalized class, we allow both **flexible point sets $D_n$** (still increasingly dense with controlled spacing) and **flexible weights $w_n$**, while keeping the multiscale “stacking tents” intuition.  
+- The classical Takagi function corresponds to a very regular dyadic net $D_n = \\{k/2^n\\}$ and equal weights $\tilde{w}_n = 1/2^n$.  
+- In the generalized class, we allow both **flexible point sets $D_n$** (still increasingly dense with controlled spacing) and **flexible weights $\tilde{w}_n$**, while keeping the multiscale “stacking tents” intuition.  
 - The continuity and fractal behavior of the classical Takagi function survive, but now we can explore a **much larger family of functions**, including exotic examples with tailored differentiability or fractal properties.
-
++
 #### A Simple Litmus Test for Nowhere Differentiability
 
 After building this sophisticated framework, a crucial question remains: can we find a simple rule to determine when a function $T_{D,w}(x)$ is nowhere differentiable? Must we check the intricate properties of the decomposition $D$ every time?
@@ -469,7 +469,7 @@ For example:
 
 Dyadic rationals, like $\tfrac12$, have two expansions: $0.1000\dots_2$ and $0.0111\dots_2$, similar to how $0.999\ldots = 1.000 $ in decimal.
 
-With this, Takagi defined his function as: [9, 1]
+With this, Takagi defined his function as: [10, 1, 9]
 
 $$
 T(x) := \sum_{m=1}^\infty \frac{1}{2^m} \sum_{k=1}^{m-1} \bigl|\varepsilon_m - \varepsilon_k\bigr|.
@@ -488,7 +488,7 @@ $$
 
 ### The key step: why bit disagreements measure a dyadic distance
 
-The expression in the parenthesis is the crucial link. We can show that it is identical to the height of our triangular tents: [1]
+The expression in the parenthesis is the crucial link. We can show that it is identical to the height of our triangular tents: [1, 9]
 $$
 \sum_{j=1}^\infty \frac{|\varepsilon_{n+j}-\varepsilon_{n+1}|}{2^{\,n+j}}
 = \frac{\phi(2^n x)}{2^n}
@@ -575,17 +575,17 @@ $$
 
 *(Notice that the numbers between $0$ and $2^k - 1$ fill out all possible combinations of $k$ zeroes and ones. Thus, each bit position takes the value '1' in exactly half of those combinations, and '0' in the other half. With $2^k$ numbers and $k$ bit positions, this means there are $2^k \cdot \tfrac{k}{2}$ ones in total, giving the formula above.)*
 
-But what happens for an arbitrary $N$ that isn't a power of two? The beautiful symmetry is broken. The formula becomes a good approximation, but there's an error. Mathematicians Trollope and Delange showed that this error is not random noise [10, 2]. It is a deterministic, fluctuating term governed precisely by the Takagi function.
+But what happens for an arbitrary $N$ that isn't a power of two? The beautiful symmetry is broken. The formula becomes a good approximation, but there's an error. Mathematicians Trollope and Delange worked, precisely, on investigation this particual error term.
 
 The exact expression is:
 
 $$
-S_1(N) = \frac{N \log_2 N}{2} + E(N)
+S_1(N) = \frac{N \log_2 N}{2} - E(N)
 $$
 
-![takagi_s1_visual.png](takagi_s1_visual.png)
+{{< figure src="takagi_s1_visual.png" alt="takagi_s1_visual.png" >}}
 
-*(The grey vertical lines mark the powers of two)*
+*(The grey vertical lines mark the powers of two).*
 
 **How exactly can we describe this error term $E(N)$?**
 
@@ -595,11 +595,9 @@ $$
 E(N) = 2^{m-1} \left\\{ 2x - T(x) - (1+x)\log_2(1+x) \right\\}
 $$
 
-This is a stunning result. It reveals that the classical Takagi function is the *exact* oscillating correction term that measures the deviation from the average when counting digits.  
+Seen from afar, $S_1(N)$ almost looks ike a straight line on a chart. But zoom in, and you notice a subtle wiggle: a fluctuation intimately related to the binary expression of $N$. That wiggle is none other than the Takagi function itself, hiding in plain sight. It’s as if the continuous curve were keeping perfect bookkeeping of the discrete dance between zeros and ones:
 
-Seen from afar, $S_1(N)$ almost looks ike a straight line on a chart. But zoom in, and you notice a subtle wiggle: a fluctuation woven tightly into the binary fabric of $N$. That wiggle is none other than the Takagi function itself, hiding in plain sight. It’s as if the continuous curve were keeping perfect bookkeeping of the discrete dance of zeros and ones:
-
-![takagi_error.png](takagi_error.png)
+{{< figure src="takagi_error.png" alt="takagi_error.png" >}}
 
 
 ### 2. Finding the Optimal Shape in a Hypercube
@@ -626,7 +624,7 @@ This tells us that the Takagi curve is a universal map for the optimal "surface-
 
 -   The value of $T(x)$ for a given fraction $x$ represents the proportion of boundary edges for the most efficient cluster occupying that fraction of the cube's vertices.
 -   The points where $T(x)$ is low correspond to very efficient ways of clustering vertices.
--   The unique maximum of $T(x)$ at $x=1/2$ corresponds to the fact that the least efficient choice is to pick exactly half the vertices. This maximizes the boundary, like cutting the cube perfectly in half.
+-   The unique minimum of $T(x)$ at $x=1/2$ corresponds to the fact that the most efficient choice is to pick exactly half the vertices. This minimizes the boundary, like cutting the cube perfectly in half.
 
 Once again, a seemingly chaotic, nowhere-differentiable function provides the elegant and universal answer to a problem in a completely different domain: the geometry of high-dimensional networks.
 
@@ -642,5 +640,6 @@ Once again, a seemingly chaotic, nowhere-differentiable function provides the el
 6.  **Guu, C. J.** (2000). The McFunction [The Takagi function]. *Discrete Mathematics*, 213(1-3), 163-167.
 7.  **Hata, M., & Yamaguti, M.** (1984). Takagi function and its generalization. *Japan Journal of Applied Mathematics*, 1(1), 183-199.
 8.  **Kôno, N.** (1987). On generalized Takagi functions. *Acta Mathematica Hungarica*, 49(3-4), 315-324.
-9.  **Takagi, T.** (1903). A simple example of the continuous function without derivative. *Proc. Phys.-Math. Soc. Japan*, 1, 176-177.
-10. **Trollope, J. R.** (1968). An explicit expression for binary digital sums. *Mathematics Magazine*, 41(1), 21-25.
+9.  **Lagarias, J. C.** (2012). The Takagi Function and Its Properties. *arXiv preprint arXiv:1112.4205*.
+10. **Takagi, T.** (1903). A simple example of the continuous function without derivative. *Proc. Phys.-Math. Soc. Japan*, 1, 176-177.
+11. **Trollope, J. R.** (1968). An explicit expression for binary digital sums. *Mathematics Magazine*, 41(1), 21-25.
