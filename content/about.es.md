@@ -9,8 +9,10 @@ showTableOfContents: false
 
 ## Hola, soy Javi.
 
-Estudio Matemáticas y me interesa, sobre todo, la intuición que hay detrás de las ideas abstractas. Creo que comprender una demostración no es solo seguir pasos lógicos, sino también captar la visión que la inspira. Entender las matemáticas con profundidad supone sentir que podrías haberlas descubierto tú, ser capaz de entrar en la cabeza de Newton, Weirstrass o Leibniz y entender la motivación detrás de cada descubrimiento.
+Soy estudiante de 2º año de Matemáticas en la UCM y una de las cosas que más disfruto es la sensación de comprender un concepto de verdad. Esa sensación que te invade cuando por fin entiendes de forma intuitiva un resultado, o cuando descubres una conexión entre dos áreas o ideas a priori totalmente separadas.
 
-Este blog es un espacio para explorar las matemáticas con calma: desde conceptos fundamentales hasta conexiones con otras áreas como la filosofía, la física o la informática. Mi objetivo es combinar rigor y claridad, pero sin perder de vista la belleza y la lógica interna que hacen de esta disciplina algo único.
+Para mí, entender las matemáticas con profundidad supone sentir que podrías haberlas descubierto tú mismo, ser capaz de entrar en la cabeza de Newton, Weirstrass o Leibniz y entender la motivación detrás de cada nueva idea.
+
+En este blog pretendo hacer precisamente eso: Desde un espíritu de redescubrimiento, y con la intuición por delante, busco despertar en quien lo lea ese "click" que convierte una función o algoritmo aburrido en una expresión elegante de un concepto más grande. Mi objetivo es combinar rigor y claridad, pero sin perder de vista la belleza y la lógica que hacen de las matemáticas lo que son.
 
 Ojalá disfrutes y aprendas leyendo este blog tanto como yo escribiéndolo.

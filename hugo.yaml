@@ -12,17 +12,62 @@ outputs:
   page: [html]
   section: [html, rss]
 
-defaultContentLanguage: en
+defaultContentLanguage: es
+defaultContentLanguageInSubdir: true
 languages:
   en:
     languageName: English
     weight: 1
     title: "Epsilon Delta"
+    menu:
+      main:
+        - identifier: home
+          name: Home
+          pageRef: /
+          weight: 10
+        - identifier: posts
+          name: Posts
+          pageRef: /posts/
+          weight: 20
+        # - identifier: tags
+        #   name: Tags
+        #   pageRef: /tags/
+        #   weight: 30
+        # - identifier: categories
+        #   name: Categories
+        #   pageRef: /categories/
+        #   weight: 40
+        - identifier: about_me
+          name: About Me
+          pageRef: /about/
+          weight: 50
   es:
     languageName: Español
     languageCode: es
     weight: 2
     title: "Epsilon Delta"
+    menu:
+      main:
+        - identifier: home
+          name: Inicio
+          pageRef: /
+          weight: 10
+        - identifier: posts
+          name: Posts
+          pageRef: /posts/
+          weight: 20
+        # - identifier: tags
+        #   name: Etiquetas
+        #   pageRef: /tags/
+        #   weight: 30
+        # - identifier: categories
+        #   name: Categorías
+        #   pageRef: /categories/
+        #   weight: 40
+        - identifier: about_me
+          name: Sobre mí
+          pageRef: /about/
+          weight: 50
 
 module:
   hugoVersion:
@@ -47,8 +92,10 @@ taxonomies:
 # Parameters
 params:
   description: "Blog about mathematics and real analysis"
+  footer:
+    displayPoweredBy: false
+    displayCopyright: true
   
-  # --- CONFIGURACIÓN DEL LOGO Y FAVICON (Formato Correcto) ---
   navbar:
     logo:
       path: "favicon.ico"   # Ruta a la imagen (desde /static)
@@ -78,26 +125,4 @@ params:
     enable: true
     default: "auto"
 
-# Menu configuration
-menu:
-  main:
-    - identifier: home
-      name: Home
-      url: /
-      weight: 10
-    - identifier: posts
-      name: Posts
-      url: /posts
-      weight: 20
-    #- identifier: tags
-    #  name: Tags
-    #  url: /tags
-    #  weight: 30
-    - identifier: categories
-      name: Categories
-      url: /categories
-      weight: 40
-    - identifier: about_me
-      name: About Me
-      url: /about/
-      weight: 50
+# (Se elimina el bloque global `menu:` para que el menú por idioma funcione)

@@ -9,8 +9,10 @@ showTableOfContents: false
 
 ## Hi, I’m Javi.
 
-I study Mathematics, and what fascinates me most is the intuition behind abstract ideas. I believe that understanding a proof is not just about following logical steps, but also about grasping the vision that inspired it. To truly understand mathematics is to feel as if you could have discovered it yourself—to step into the mind of Newton, Weierstrass, or Leibniz and see the motivation behind each discovery.
+I’m a second-year Mathematics student at UCM, and one of the things I enjoy most is the feeling of truly understanding a concept. That feeling when an abstract result suddenly clicks into place, or when you discover a hidden connection between two areas that, at first glance, seemed completely unrelated.
 
-This blog is a space to explore mathematics at a thoughtful pace: from fundamental concepts to unexpected connections with fields like philosophy, physics, or computer science. My aim is to combine rigor and clarity, without losing sight of the beauty and inner logic that make this discipline unique.
+For me, to understand mathematics deeply is to feel as if you could have discovered it yourself, to step into the mind of Newton, Weierstrass, or Leibniz and grasp the motivation behind each new idea.
 
-I hope you enjoy and learn from reading this blog as much as I do from writing it.
+That’s exactly what I aim to do in this blog: from a spirit of rediscovery, and always guided by intuition, I want to spark in the reader that same “click” that turns a dull function or algorithm into an elegant expression of a larger concept. My goal is to combine rigor and clarity without losing sight of the beauty and inner logic that make mathematics what it is.
+
+I hope you enjoy and learn from this blog as much as I do while writing it.
